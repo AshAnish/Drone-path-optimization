@@ -1,0 +1,335 @@
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #2ecc71;
+    --secondary-dark: #27ae60;
+    --accent-color: #e74c3c;
+    --accent-dark: #c0392b;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+    --medium-gray: #777;
+    --border-radius: 5px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+header p {
+    color: var(--medium-gray);
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left-panel {
+    flex: 1;
+    min-width: 300px;
+}
+
+.right-panel {
+    flex: 2;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.success-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.success-btn:hover {
+    background-color: var(--secondary-dark);
+}
+
+.danger-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.danger-btn:hover {
+    background-color: var(--accent-dark);
+}
+
+#map {
+    height: 500px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.medicine-list-container {
+    margin: 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: var(--border-radius);
+}
+
+#medicineList {
+    list-style-type: none;
+}
+
+#medicineList li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#medicineList li:last-child {
+    border-bottom: none;
+}
+
+.delete-medicine {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-medicine:hover {
+    background-color: var(--accent-dark);
+}
+
+.results-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.hidden {
+    display: none;
+}
+
+.results-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--medium-gray);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+}
+
+.chart-container {
+    max-width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+#routeList {
+    margin-top: 15px;
+}
+
+#routeList ol {
+    padding-left: 20px;
+}
+
+#routeList li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: var(--medium-gray);
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .left-panel, .right-panel {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+/* Leaflet marker styling */
+.custom-marker-icon {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.marker-origin {
+    background-color: var(--secondary-color);
+}
+
+.marker-partially-selected {
+    background-color: var(--accent-color);
+}
+
+.leaflet-popup-content {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Loading spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
